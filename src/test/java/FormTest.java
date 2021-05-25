@@ -24,45 +24,45 @@ public class FormTest {
   @Test
   void positiveFormTest() {
     open("https://demoqa.com/automation-practice-form");
-    var firstName = "Serp";
-    var lastName ="Derp";
-    var userEmail="serp@derp.com";
-    var gender="Male";
-    var userNumber="1234567890";
-    var birthYear="1966";
-    var birthMonth="September";
-    var birthDay="22";
-    var firstSubject="Chemistry";
-    var secondSubject="English";
-    var hobby="Sports";
-    var currentAddress="London, 221B Baker Street";
-    var state="NCR";
-    var city="Delhi";
+    String firstName = "Serp",
+        lastName = "Derp",
+        userEmail = "serp@derp.com",
+        gender = "Male",
+        userNumber = "1234567890",
+        birthYear = "1966",
+        birthMonth = "September",
+        birthDay = "22",
+        firstSubject = "Chemistry",
+        secondSubject = "English",
+        hobby = "Sports",
+        currentAddress = "London, 221B Baker Street",
+        state = "NCR",
+        city = "Delhi";
 
-    $("[id=firstName]").setValue(firstName);
-    $("[id=lastName]").setValue(lastName);
-    $("[id=userEmail]").setValue(userEmail);
+    $("#firstName").setValue(firstName);
+    $("#lastName").setValue(lastName);
+    $("#userEmail").setValue(userEmail);
     $(byText(gender)).doubleClick();
-    $("[id=userNumber]").setValue(userNumber);
-    $("[id=dateOfBirthInput").click();
+    $("#userNumber").setValue(userNumber);
+    $("#dateOfBirthInput").click();
     $(".react-datepicker__year-select").selectOption(birthYear);
     $(".react-datepicker__month-select").selectOption(birthMonth);
     $(byText(birthDay)).click();
-    $("[id=subjectsInput").setValue(firstSubject).pressEnter().setValue(secondSubject).pressEnter();
+    $("#subjectsInput").setValue(firstSubject).pressEnter().setValue(secondSubject).pressEnter();
     $(byText(hobby)).click();
-    $("input[id=uploadPicture]").uploadFile(new File("src/test/resources/test.jpg"));
-    $("[id=currentAddress]").setValue(currentAddress);
-    $("[id=state").click();
+    $("input#uploadPicture").uploadFile(new File("src/test/resources/test.jpg"));
+    $("#currentAddress").setValue(currentAddress);
+    $("#state").click();
     $(byText(state)).click();
-    $("[id=city").click();
+    $("#city").click();
     $(byText(city)).click();
-    $("[id=submit").click();
+    $("#submit").click();
 
-    $("tbody").shouldHave(text(firstName+" "+lastName),
+    $("tbody").shouldHave(text(firstName + " " + lastName),
                           text(userEmail),
                           text(gender),
                           text(userNumber),
-                          text(birthDay+" "+birthMonth+","+birthYear),
+                          text(birthDay + " " + birthMonth + "," + birthYear),
                           text(firstSubject),
                           text(secondSubject),
                           text(hobby),
