@@ -1,0 +1,15 @@
+/build/
+.idea
+/target
+.classpath
+.factorypath
+.project
+.settings
+logs/
+*.iml
+test-result/
+reportportal.lock
+reportportal.sync
+/gradle.properties
+/.gradle/
+/.allure/
